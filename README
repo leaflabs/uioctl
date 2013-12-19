@@ -28,13 +28,7 @@ little-endian by default
 ./uioctl /dev/uio0 -m
 ./uioctl -l
 
-also, secret trick:
-
-sudo ./uioctl /dev/mem 0x818 -n 5
-
-BUT WAIT?
-
-hexdump -C /dev/uio0 -s 0x
+BUT WAIT?  hexdump -C /dev/uio0 -s 0x
 
 -------------------------------------------------------------------------------
 
