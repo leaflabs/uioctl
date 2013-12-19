@@ -210,7 +210,16 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Couldn't open UIO device file: %s\n", fpath);
         return EXIT_FAILURE;
     }
-    ptr = mmap(NULL, map_size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
+    /* NOTE: with UIO the offset is not a normal offset; it's a region
+     * selector.
+     */
+    ptr = mmap(NULL, map_size + addr, PROT_READ|PROT_WRITE,
+               MAP_SHARED, fd, 0);
+    if (ptr == MAP_FAILED) {
+        perror("mmap");
+        fprintf(stderr, "Couldn't mmap.\n");
+        return EXIT_FAILURE;
+    }
 
     if (mode == MODE_READ) {
         for (; count > 0; count--) {
