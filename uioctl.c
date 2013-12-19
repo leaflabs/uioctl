@@ -76,7 +76,7 @@ static void monitor(char *fpath, int forever) {
     char startval[] = {0,0,0,1};
    
     printf("Waiting for interrupts on %s\n", fpath);
-    fd = open(fpath, O_RDWR);
+    fd = open(fpath, O_RDWR|O_SYNC);
     if (fd < 1) {
         perror("uioctl");
         fprintf(stderr, "Couldn't open UIO device file: %s\n", fpath);
