@@ -17,6 +17,7 @@
  *
  * Changelog:
  *  2013-12-04: bnewbold: Initial version; missing width management, list mode
+ *  2013-12-19: bnewbold: GPLv3; fix mmap size
  *
  */
 
