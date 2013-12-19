@@ -212,8 +212,6 @@ int main(int argc, char *argv[]) {
     }
     ptr = mmap(NULL, map_size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
 
-    /* TODO: do the things... */
-    /* value = *((unsigned *) (ptr + offset); */
     if (mode == MODE_READ) {
         for (; count > 0; count--) {
             value = *((unsigned *) (ptr + addr));
