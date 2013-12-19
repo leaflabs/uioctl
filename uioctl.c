@@ -97,7 +97,7 @@ static void monitor(char *fpath, int forever) {
             fprintf(stderr, "Problem reading from device file\n");
             exit(EXIT_FAILURE);
         }
-        printf("[%ld.%03d] interrupt: %d\n", tp.time, tp.millitm,
+        printf("[%ld.%04d] interrupt: %d\n", tp.time, tp.millitm,
             (buf[3] * 16777216 + buf[2] * 65536 + buf[1] * 256 + buf[0]));
     } while (forever);
     close(fd);
