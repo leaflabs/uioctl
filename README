@@ -32,6 +32,9 @@ BUT WAIT?  hexdump -C /dev/uio0 -s 0x
 
 -------------------------------------------------------------------------------
 
+Userspace I/O drivers in a realtime context
+https://www.osadl.org/fileadmin/dam/rtlws/12/Koch.pdf
+
 UIO: user-space drivers (2007)
 https://lwn.net/Articles/232575/
 
